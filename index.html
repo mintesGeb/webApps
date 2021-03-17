@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <header
+      class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
+        >Mintes Web Apps</a
+      >
+      <button
+        class="navbar-toggler position-absolute d-md-none collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input
+        class="form-control form-control-dark w-100"
+        type="text"
+        placeholder="Search (...will be active soon...)"
+        aria-label="Search"
+      />
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav
+          id="sidebarMenu"
+          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+        >
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  class="comp-int-btn nav-link active"
+                  aria-current="page"
+                  href="#"
+                >
+                  <span data-feather="home"></span>
+                  Compound Interest
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  App-B
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  App-C
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  App-D
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  App-E
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  App-F
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Enjoy the Apps</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  Share
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  Export
+                </button>
+              </div>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-secondary dropdown-toggle"
+              >
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+
+          <!-- My code -->
+          <div class="hidden comp-int-content my-4 w-100">
+            <!-- <h1>Hi world</h1> -->
+            <div>
+              <div>
+                <label for="Initial Deposite"></label>
+                <input id="deposite-input" type="text" value="10000" /><span
+                  id="dep"
+                >
+                  ...</span
+                >
+              </div>
+              <div>
+                <label for="Annual Interest Rate (%)"></label>
+                <input id="anual-interest-rate" type="text" value="0.25" /><span
+                  id="air"
+                >
+                  ...</span
+                >
+              </div>
+              <div>
+                <label for="Time (in years)"></label>
+                <input id="time" type="text" value="10" /><span
+                  id="time-display"
+                >
+                  ...</span
+                >
+              </div>
+              <div>
+                <div id="cpdi-result">
+                  <span class="cpdi-result-text"> < - - [Enter Details] </span>
+                </div>
+                <span id="show-table-guide"
+                  ><span class="show-table-blue"> <em><-<-</em> </span> Click
+                  <span class="show-table-blue"> <em>Show Table</em> </span> for
+                  details</span
+                >
+              </div>
+            </div>
+            <br />
+
+            <button
+              class="btn btn-outline-primary btn-lg"
+              id="calculate-btn"
+              type="button"
+            >
+              Calculate
+            </button>
+          </div>
+
+          <div id="all-table" class="hidden table-responsive">
+            <h4>Detail table</h4>
+            <button class="show-table btn btn-secondary btn-sm">
+              Show Table
+            </button>
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>#month</th>
+                  <th>Interest</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hidden" id="r1">
+                  <td id="m1">month</td>
+                  <td id="i1">interest</td>
+                  <td id="b1">balance</td>
+                </tr>
+                <tr class="hidden" id="r2">
+                  <td id="m2">month</td>
+                  <td id="i2">interest</td>
+                  <td id="b2">balance</td>
+                </tr>
+                <tr class="hidden" id="r3">
+                  <td id="m3">month</td>
+                  <td id="i3">interest</td>
+                  <td id="b3">balance</td>
+                </tr>
+                <tr class="hidden" id="r4">
+                  <td id="m4">month</td>
+                  <td id="i4">interest</td>
+                  <td id="b4">balance</td>
+                </tr>
+                <tr class="hidden" id="r5">
+                  <td id="m5">month</td>
+                  <td id="i5">interest</td>
+                  <td id="b5">balance</td>
+                </tr>
+                <tr class="hidden" id="r6">
+                  <td id="m6">.</td>
+                  <td id="i6">.</td>
+                  <td id="b6">.</td>
+                </tr>
+                <tr class="hidden" id="r7">
+                  <td id="m7">.</td>
+                  <td id="i7">.</td>
+                  <td id="b7">.</td>
+                </tr>
+                <tr class="hidden" id="r8">
+                  <td id="m8">.</td>
+                  <td id="i8">.</td>
+                  <td id="b8">.</td>
+                </tr>
+                <tr>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
+                </tr>
+                <tr>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
+                </tr>
+                <tr>
+                  <td>.</td>
+                  <td>.</td>
+                  <td>.</td>
+                </tr>
+                <tr class="hidden" id="r119">
+                  <td id="m119">month</td>
+                  <td id="i119">interest</td>
+                  <td id="b119">balance</td>
+                </tr>
+                <tr class="hidden" id="r120">
+                  <td id="m120">month</td>
+                  <td id="i120">interest</td>
+                  <td id="b120">balance</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
