@@ -18,7 +18,7 @@
 
   background-color: #007bff;
   height: 6rem;
-  width: 30%;
+  width: 20%;
   position: absolute;
   right: 10%;
   top: 150px;
@@ -27,11 +27,13 @@
 #show-table-guide {
   font-weight: bold;
   position: absolute;
-  right: 20%;
+  right: 15%;
   top: 320px;
   padding: 20px;
   border: solid 1px #007bff;
   border-radius: 4px;
+  margin: 10px;
+  /* height: 8px; */
 }
 .show-table-blue {
   color: #007bff;

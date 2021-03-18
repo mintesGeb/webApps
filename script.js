@@ -9,6 +9,7 @@ function pageload() {
     .getElementById("calculate-btn")
     .addEventListener("click", calculateCI);
   document.querySelector(".comp-int-btn").onclick = displayCompInt;
+
   document.querySelector(".show-table").onclick = showTable;
 }
 
@@ -16,19 +17,22 @@ function calculateCI() {
   document.getElementById("dep").innerHTML = `   ${
     document.getElementById("deposite-input").value
   }`;
+  document.getElementById("dep").style.fontSize = "1.5rem";
   document.getElementById("air").innerHTML = `   ${
     document.getElementById("anual-interest-rate").value
   }`;
+  document.getElementById("air").style.fontSize = "1.5rem";
 
   document.getElementById("time-display").innerHTML = `  ${
     document.getElementById("time").value
   }`;
+  document.getElementById("time-display").style.fontSize = "1.5rem";
 
   let balance = parseFloat(document.getElementById("deposite-input").value);
   let rate = parseFloat(document.getElementById("anual-interest-rate").value);
   let time = parseFloat(document.getElementById("time").value);
 
-  alert("Calulate Coumpund Interest?");
+  // alert("Calulate Compund Interest?");
   let result = calulateCompundInterest(balance, rate, time);
   document.querySelector(".cpdi-result-text").innerHTML = result;
 
@@ -50,6 +54,8 @@ function calculateCI() {
     document.getElementById("i" + i).innerHTML = eachMonth[i - 1][1];
     document.getElementById("b" + i).innerHTML = eachMonth[i - 1][2];
   }
+
+  document.getElementById("show-table-guide").classList.toggle("hidden");
 }
 
 function calulateCompundInterest(d, r, t) {
@@ -86,9 +92,18 @@ function showTable() {
   for (let i = 119; i <= 120; i++) {
     document.getElementById("r" + i).classList.remove("hidden");
   }
+  document.getElementById("show-table-guide").classList.add("hidden");
+  document.querySelector(".show-table").classList.add("hidden");
+}
+
+function closeTable() {
+  if (document.querySelector(".show-table").innerHTML === "Close Table") {
+  }
 }
 
 function displayCompInt() {
   document.querySelector(".comp-int-content").classList.toggle("hidden");
   document.getElementById("all-table").classList.toggle("hidden");
+  document.querySelector(".title-to-name").innerHTML = "Compound Interest";
+  document.querySelector(".title-to-name").style.color = "#007bff";
 }
