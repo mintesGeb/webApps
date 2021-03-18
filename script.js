@@ -8,9 +8,12 @@ function pageload() {
   document
     .getElementById("calculate-btn")
     .addEventListener("click", calculateCI);
+
   document.querySelector(".comp-int-btn").onclick = displayCompInt;
 
   document.querySelector(".show-table").onclick = showTable;
+
+  document.querySelector(".collapse-table").onclick = collapseTable;
 }
 
 function calculateCI() {
@@ -56,6 +59,7 @@ function calculateCI() {
   }
 
   document.getElementById("show-table-guide").classList.toggle("hidden");
+  greyOut();
 }
 
 function calulateCompundInterest(d, r, t) {
@@ -94,6 +98,24 @@ function showTable() {
   }
   document.getElementById("show-table-guide").classList.add("hidden");
   document.querySelector(".show-table").classList.add("hidden");
+  document.getElementById("r.1").classList.remove("hidden");
+  document.getElementById("r.2").classList.remove("hidden");
+  document.getElementById("r.3").classList.remove("hidden");
+  document.querySelector(".collapse-table").classList.remove("hidden");
+}
+function collapseTable() {
+  for (let i = 1; i <= 8; i++) {
+    document.getElementById("r" + i).classList.add("hidden");
+  }
+  for (let i = 119; i <= 120; i++) {
+    document.getElementById("r" + i).classList.add("hidden");
+  }
+  document.querySelector(".collapse-table").classList.add("hidden");
+  document.querySelector(".show-table").classList.remove("hidden");
+  document.getElementById("placeholder").classList.add("hidden");
+  document.getElementById("r.1").classList.add("hidden");
+  document.getElementById("r.2").classList.add("hidden");
+  document.getElementById("r.3").classList.add("hidden");
 }
 
 function closeTable() {
@@ -106,4 +128,11 @@ function displayCompInt() {
   document.getElementById("all-table").classList.toggle("hidden");
   document.querySelector(".title-to-name").innerHTML = "Compound Interest";
   document.querySelector(".title-to-name").style.color = "#007bff";
+}
+
+function greyOut() {
+  document.getElementById("deposite-input").style.backgroundColor = "#727272";
+  document.getElementById("anual-interest-rate").style.backgroundColor =
+    "#727272";
+  document.getElementById("time").style.backgroundColor = "#727272";
 }

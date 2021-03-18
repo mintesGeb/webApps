@@ -39,6 +39,14 @@
   color: #007bff;
 }
 
+.comp-int-btn {
+  color: #727272;
+}
+
+/* .comp-int-btn:hover {
+  color: #007bff;
+} */
+
 .hidden {
   visibility: hidden;
 }
@@ -105,6 +113,12 @@ body {
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
+}
+
+.sidebar .nav-link:hover {
+  font-weight: 500;
+  color: #007bff;
+  font-size: 1.2rem;
 }
 
 .sidebar .nav-link .feather {
