@@ -23,6 +23,17 @@ function reverse(str) {
 }
 
 function binaryAddition(str1, str2) {
+  for (let each of str1) {
+    if (each !== 0 || each !== 1) {
+      return `Please enter a valid binary number`;
+    }
+  }
+  for (let each of str2) {
+    if (each !== 0 || each !== 1) {
+      return `Please enter a valid binary number`;
+    }
+  }
+
   let sum = "";
   let rem = "0";
 
