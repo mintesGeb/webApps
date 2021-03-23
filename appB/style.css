@@ -1,0 +1,25 @@
+.title {
+  color: #ffc93c;
+  padding: 20px;
+  margin: 200px auto 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #31326f;
+  text-align: center;
+}
+.submit {
+  padding: 15px;
+}
+
+.submit-btn {
+  margin: 10px;
+}
+.result {
+  color: #dbf6e9;
+  padding: 20px;
+  margin: 50px auto 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+}
