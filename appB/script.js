@@ -12,6 +12,7 @@ function addBinary() {
   let secondNum = document.querySelector(".secondNum").value;
 
   let binarySum = binaryAddition(firstNum, secondNum);
+  document.querySelector(".description").classList.add("hidden");
 
   document.querySelector(".result").textContent = binarySum;
 }
@@ -24,13 +25,17 @@ function reverse(str) {
 
 function binaryAddition(str1, str2) {
   for (let each of str1) {
-    if (each !== 0 || each !== 1) {
-      return `Please enter a valid binary number`;
+    if (each !== "0") {
+      if (each !== "1") {
+        return `Please enter a valid binary number`;
+      }
     }
   }
-  for (let each of str2) {
-    if (each !== 0 || each !== 1) {
-      return `Please enter a valid binary number`;
+  for (let each of str1) {
+    if (each !== "0") {
+      if (each !== "1") {
+        return `Please enter a valid binary number`;
+      }
     }
   }
 
