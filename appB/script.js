@@ -3,6 +3,7 @@ window.onload = pageload;
 
 function pageload() {
   document.querySelector(".submit-btn").onclick = addBinary;
+  document.querySelector(".convert").onclick = convert;
 }
 
 function addBinary() {
@@ -77,4 +78,9 @@ function binaryAddition(str1, str2) {
   console.log(str1, str2);
   if (rem !== "0") return reverse(sum + rem);
   return reverse(sum);
+}
+
+function convert() {
+  let x = document.querySelector(".toConvert").value;
+  console.log(x);
 }
